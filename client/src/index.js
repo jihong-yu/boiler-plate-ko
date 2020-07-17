@@ -9,6 +9,7 @@ import { applyMiddleware,createStore } from 'redux';
 import PromiseMiddleware from 'redux-promise';
 import ReduxThunk from 'redux-thunk';
 import Reducer from './_reducers' //뒤에 index.js를 안붙여도 알아서 처리해줌
+import { BrowserRouter } from 'react-router-dom';
 
 const createStoreWithMiddleware = applyMiddleware(PromiseMiddleware,ReduxThunk)(createStore);
 //store에서 객체뿐만아니라 promise,function도 받을 수 있게하기위해설정
@@ -21,7 +22,9 @@ ReactDOM.render(
         window.__REDUX_DEVTOOLS_EXTENSION__()
         )}
     >
-    <App />
+      <BrowserRouter>
+     <App />
+     </BrowserRouter>
     </Provider>
     ,document.getElementById('root')
 );

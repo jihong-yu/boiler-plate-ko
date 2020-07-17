@@ -20,7 +20,7 @@ export function registerUser(dataToSubmit){
 }
 
 export function auth(){
-    const request = axios.get('/api/users/auth')
+    const request = axios.get(`/api/users/auth`)
     .then(response => response.data) //백엔드에서 데이터를 request에 반환
 
     return {
